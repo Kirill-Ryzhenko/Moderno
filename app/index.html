@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/libs.min.css">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
     <header class="header">
-
       <div class="header__top">
-
         <div class="container">
           <div class="header__top-inner">
             <div class="header__logo">
@@ -26,14 +25,13 @@
               Talk to an expert: <a class="header__phone" href="tel:61383766284">+61 3 83766284</a>
             </div>
             <div class="header__box">
-              <!-- <a class="basket" href="#"></a> -->
+              <a class="basket" href="#"></a>
               <a class="header__btn header__btn-login" href="#">Login</a>
               <a class="header__btn header__btn-register" href="#">Register</a>
             </div>
           </div>
         </div>
       </div>
-
       <div class="header__menu">
         <div class="container">
           <nav class="menu">
@@ -52,9 +50,67 @@
           </nav>
         </div>
       </div>
-
-
     </header>
+
+    <section class="search" style="background-image: url(images/bg-search.jpg);">
+      <div class="container">
+        <div class="search__inner">
+          <div class="search__inner-title">
+            Welcome To Moderno Market Place!
+          </div>
+          <div class="search__inner-text">
+            Premium WordPress Themes, Web Templates and Many More ...
+          </div>
+          <div class="search__inner-form">
+            <form action="">
+              <input type="text" placeholder="Search Your Keywords . . ." required>
+              <button type="submit">
+                <img src="images/icons/search.png" alt="">
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product">
+      <div class="container-fluid">
+        <div class="product__title title">
+          Let’s Check Out Our Newest Release Prodcuts
+        </div>
+        <div class="product__inner">
+          <div class="product__inner-btn">
+            <button>All</button>
+            <button>WordPress</button>
+            <button>Joomla</button>
+            <button>Plugins</button>
+            <button>Component</button>
+            <button>PSD</button>
+          </div>
+          <div class="product__inner-box">
+            <div class="product__item">
+              <div class="product__item-img" style="background-image: url(images/product-item.jpg);"></div>
+              <div class="product__item-content">
+                <div class="product__item-name">
+                  <a class="product__item-title" href="#">Responsive Mobile APP</a>
+                  <a class="product__item-category" href="#">Site Template</a>
+                </div>
+                <div class="product__item-price">$19</div>
+              </div>
+              <div class="product__item-info">
+                <div class="product__item-author">
+                  <a class="product__item-avatar" href="#" style="background-image: url(images/icons/avatar.jpg);"></a>
+                  <a href="#">Radiustheme</a>
+                </div>
+                <div class="product__item-star">(<span>05</span>)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/libs.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

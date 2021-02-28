@@ -29,13 +29,13 @@ gulp.task('style', function () {
     .pipe(gulp.dest('app/css'));
 });
 
-// gulp.task('script', function () {
-//   return gulp
-//     .src(/*['src_for_plugin', 'src_for_plugin']*/)
-//     .pipe(concat('libs.min.js'))
-//     .pipe(uglify())
-//     .pipe(gulp.dest('app/js'));
-// });
+gulp.task('script', function () {
+  return gulp
+    .src(['node_modules/mixitup/dist/mixitup.js'])
+    .pipe(concat('libs.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('app/js'));
+});
 
 gulp.task('html', function () {
   return gulp.src('app/*.html').pipe(browserSync.reload({ stream: true }));
@@ -59,4 +59,4 @@ gulp.task('watch', function () {
   gulp.watch('app/js/*.js', gulp.parallel('js'));
 });
 
-gulp.task('default', gulp.parallel('style', /* 'script', */ 'sass', 'watch', 'browser-sync'));
+gulp.task('default', gulp.parallel('style', 'script', 'sass', 'watch', 'browser-sync'));

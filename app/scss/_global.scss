@@ -28,6 +28,12 @@ li {
   list-style: none;
 }
 
+button {
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
 body {
   font-family: 'Roboto-Regular';
   font-size: 15px;
@@ -38,4 +44,25 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.container-fluid {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.title {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  color: $bg;
+  line-height: 48px;
+}
+
+@media (max-width: 720px) {
+  .container-fluid {
+    padding: 0 15px;
+  }
 }
