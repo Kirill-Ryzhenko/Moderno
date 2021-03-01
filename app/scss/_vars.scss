@@ -4,3 +4,18 @@ $green: #8bc34a;
 $bg: #263238;
 $grey: #f4f6f5;
 $product-border: #e7ecf2;
+
+@mixin f400 {
+  font-family: 'Roboto-Regular';
+  font-weight: 400;
+}
+
+@mixin f500 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+@mixin f700 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}

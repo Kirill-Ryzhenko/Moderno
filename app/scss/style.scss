@@ -64,14 +64,13 @@
   text-align: center;
 
   &__inner {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
+    @include f500;
     color: #fff;
     padding: 158px 0 100px;
     &-title {
       font-size: 48px;
       line-height: 48px;
-      font-weight: 700;
+      @include f700;
       margin-bottom: 28px;
     }
 
@@ -115,8 +114,7 @@
 .product {
   background-color: $grey;
   padding: 110px 0;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
+  @include f500;
   &__inner {
     .mixitup-control-active {
       color: #fff;
@@ -135,12 +133,18 @@
         border: none;
         background-color: #fff;
         border-radius: 0;
+        box-shadow: 0px 1px 3px 0px rgba(204, 216, 228, 0.75);
         & + button {
           margin-left: 6px;
         }
       }
       &.popular-btn {
         margin: 80px 0 0px 0;
+        button {
+          @include f400;
+          font-size: 16px;
+          padding: 20px 30px;
+        }
       }
     }
     &-box {
@@ -185,7 +189,7 @@
       display: block;
     }
     &-price {
-      font-weight: 700;
+      @include f700;
       font-size: 18px;
       color: $bg;
       margin-left: 20px;
@@ -211,13 +215,16 @@
       margin-right: 14px;
     }
     &-star {
-      font-family: 'Roboto-Regular';
+      @include f400;
       font-size: 12px;
-      font-weight: 400;
       color: #b0bec5;
-      margin-left: 20px;
+      display: flex;
+      align-items: center;
       span {
         color: $bg;
+      }
+      .product-star {
+        margin: 0 10px;
       }
     }
   }
