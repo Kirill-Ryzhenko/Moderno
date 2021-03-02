@@ -226,15 +226,12 @@
       color: $bg;
     }
     .product-star {
-      margin: 0 10px;
+      margin: 0 5px;
     }
   }
 }
 
 .product-slider {
-  .container-fluid {
-    padding: 0 15px;
-  }
   padding: 110px 0;
   &__title {
     color: #000;
@@ -263,6 +260,101 @@
           background-color: $green;
         }
       }
+    }
+  }
+}
+
+.advantages {
+  background-color: $bg;
+  padding: 110px 0;
+  &__title {
+    margin-bottom: 80px;
+    color: #fff;
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    text-align: center;
+    max-width: 345px;
+    padding: 0 15px;
+    &-img {
+      margin: 0 auto 40px;
+      height: 113px;
+      width: 113px;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      .item1-svg {
+        width: 50px;
+        height: 67px;
+      }
+      .item2-svg {
+        width: 71px;
+        height: 73px;
+      }
+      .item3-svg {
+        width: 86px;
+        height: 76px;
+      }
+    }
+    &-title {
+      color: #fff;
+      @include f500;
+      font-size: 24px;
+      margin-bottom: 25px;
+    }
+    &-text {
+      color: #b0bec5;
+    }
+    &:hover {
+      .advantages__item-img {
+        background-color: $green;
+        g {
+          fill: #fff;
+          transition: all 0.5s;
+        }
+      }
+      .advantages__item-title {
+        color: $green;
+        transition: all 0.5s;
+      }
+    }
+  }
+}
+
+.author {
+  min-height: 750px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__box {
+    max-width: 650px;
+    width: 100%;
+    min-height: 216px;
+    background-color: $green;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 71px 59px;
+  }
+  &__title {
+    color: #fff;
+    font-size: 30px;
+    max-width: 270px;
+  }
+  &__link {
+    background-color: #fff;
+    font-size: 18px;
+    a {
+      padding: 25px 43px;
+      color: $bg;
     }
   }
 }
