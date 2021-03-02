@@ -345,16 +345,50 @@
     padding: 71px 59px;
   }
   &__title {
+    @include f500;
     color: #fff;
     font-size: 30px;
     max-width: 270px;
+    line-height: 36px;
+    span {
+      @include f700;
+    }
   }
   &__link {
     background-color: #fff;
-    font-size: 18px;
     a {
+      font-size: 18px;
       padding: 25px 43px;
       color: $bg;
+    }
+  }
+}
+
+.tutorials {
+  padding: 70px 0 120px;
+  &__title {
+    margin-bottom: 60px;
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    max-width: 370px;
+    width: 100%;
+    &-img {
+      min-height: 270px;
+    }
+    &-title {
+      padding: 40px 0;
+      text-align: center;
+      font-size: 24px;
+      @include f700;
+      color: $bg;
+      background-color: #f8f8f8;
+    }
+    & + & {
+      margin-left: 30px;
     }
   }
 }
