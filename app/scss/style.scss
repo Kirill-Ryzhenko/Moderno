@@ -19,21 +19,6 @@
     }
   }
 
-  &__btn {
-    font-size: 12px;
-    color: #fff;
-    padding: 4px;
-    width: 72px;
-    text-align: center;
-    border-radius: 4px;
-    &-login {
-      background-color: $green;
-    }
-    &-register {
-      margin-left: 7px;
-      background-color: $orange;
-    }
-  }
   &__menu {
     background-color: $bg;
     .menu {
@@ -53,6 +38,371 @@
         }
       }
     }
+  }
+}
+
+.header__box {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  & > div {
+    padding-top: auto;
+    padding-bottom: auto;
+  }
+  &.login__out {
+    .header__btn-login,
+    .header__btn-register {
+      display: block;
+    }
+    .header__btn-logout,
+    .user {
+      display: none;
+    }
+  }
+  &.login__on {
+    .header__btn-login,
+    .header__btn-register {
+      display: none;
+    }
+    .header__btn-logout,
+    .user {
+      display: block;
+    }
+  }
+}
+.circle {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  & > a {
+    width: 34px;
+    height: 34px;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    position: relative;
+    &::before {
+      position: absolute;
+      transition: color 0.5s;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #a0a0a0;
+    }
+    span {
+      position: absolute;
+      right: -5px;
+      top: -8px;
+      @include f500;
+      font-size: 11px;
+      line-height: 18px;
+      padding: 0 2px;
+      min-width: 18px;
+      height: 18px;
+      color: #fff;
+      border-radius: 9px;
+      text-align: center;
+    }
+  }
+  &:hover > a::before {
+    color: $bg;
+  }
+  & + .circle {
+    margin-left: 16px;
+  }
+}
+
+// start dropdown-menu
+
+.header-drop-menu {
+  width: 268px;
+  position: absolute;
+  top: 90px;
+  right: 0;
+  padding: 0px;
+  background-color: #fff;
+  border: 0px solid #d5d5d5;
+  border-right-width: 1px;
+  border-left-width: 1px;
+  overflow: hidden;
+  height: 0;
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: all 0.4s;
+  z-index: 999;
+}
+
+.circle:hover .header-drop-menu {
+  height: auto;
+  overflow: auto;
+  border-width: 1px;
+  transform: scaleY(1);
+}
+
+.notification__item {
+  padding: 20px 58px 24px 23px;
+  display: flex;
+  position: relative;
+  @include f400;
+  & + .notification__item {
+    border-top: 1px solid #d5d5d5;
+  }
+  &-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  &::before {
+    font-size: 16px;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #b0bec5;
+  }
+  &.notification-unread::before {
+    color: $tomato;
+  }
+}
+
+.notification__title {
+  font-size: 12px;
+  @include f400;
+  color: $green;
+  margin-top: 8px;
+}
+
+.notification__date {
+  color: #707070;
+  font-size: 10px;
+  @include f400;
+  margin-top: 10px;
+}
+
+.mail__item {
+  padding: 20px 58px 24px 23px;
+  display: flex;
+  position: relative;
+  @include f400;
+  & + .mail__item {
+    border-top: 1px solid #d5d5d5;
+  }
+  &-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  &::before {
+    font-size: 16px;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #b0bec5;
+  }
+  &.mail-unread::before {
+    color: $tomato;
+  }
+}
+.mail__name {
+  font-size: 12px;
+  @include f700;
+  color: $bg;
+  @include f400;
+}
+.mail__theme {
+  font-size: 11px;
+  color: $green;
+  margin-top: 8px;
+  @include f400;
+}
+
+.mail__date {
+  color: #707070;
+  font-size: 10px;
+  margin-top: 10px;
+  @include f400;
+}
+
+.basket__item {
+  padding: 20px 23px 24px;
+  border-bottom: 1px solid #d5d5d5;
+  display: flex;
+  &-image {
+    width: 73px;
+    height: 57px;
+    margin-right: 15px;
+  }
+
+  .basket__title {
+    @include f500;
+    display: block;
+    color: $bg;
+    font-size: 15px;
+    line-height: 15px;
+    margin-bottom: 7px;
+  }
+  .basket__category {
+    margin-bottom: 7px;
+    display: block;
+    font-size: 12px;
+    color: $green;
+    line-height: 12px;
+  }
+  .basket__price {
+    @include f500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #000;
+  }
+}
+
+.basket__payment {
+  padding: 0 17px 13px;
+}
+
+.basket__cost {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 13px;
+  color: $bg;
+  @include f700;
+}
+
+.basket__btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.basket__btn {
+  color: #fff;
+  @include f700;
+  font-size: 14px;
+}
+
+.cart-btn {
+  background-color: $green;
+  padding: 13px 19px;
+}
+
+.checkout-btn {
+  padding: 13px 12px;
+  background-color: $orange;
+}
+
+.notification span {
+  background-color: $yellow;
+}
+
+.mail span {
+  background-color: $tomato;
+}
+
+.basket {
+  & span {
+    background-color: $green;
+  }
+}
+// end dropdown-menu
+
+.header__user {
+  min-width: 158px;
+  margin-left: 16px;
+  margin-right: 25px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  &:hover .user__list {
+    height: auto;
+    border-width: 1px;
+    padding: 25px 20px;
+    transition: all 0.4s;
+  }
+}
+
+.user__list {
+  z-index: 999;
+  position: absolute;
+  right: 0;
+  top: 90px;
+  width: 100%;
+  padding: 0 20px;
+  background-color: #fff;
+  font-size: 12px;
+  border: 0px solid #d5d5d5;
+  height: 0;
+  overflow: hidden;
+  & li + li {
+    margin-top: 20px;
+  }
+}
+
+.right-arrow {
+  padding-left: 15px;
+  position: relative;
+  &::before {
+    content: '\f105';
+    font-family: 'icomoon';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: $green;
+  }
+}
+
+.user__avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  margin-right: 14px;
+}
+.user__info {
+  font-size: 14px;
+  line-height: 18px;
+  position: relative;
+  padding-right: 15px;
+  width: 100%;
+  &::before {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    font-size: 16px;
+    font-family: 'icomoon';
+    color: #707070;
+  }
+}
+.user__nickname {
+  color: #222222;
+  @include f500;
+}
+
+.user__balance {
+  color: $green;
+  @include f700;
+}
+
+.header__btn {
+  font-size: 12px;
+  color: #fff;
+  padding: 4px;
+  width: 72px;
+  text-align: center;
+  border-radius: 4px;
+  &-login {
+    background-color: $green;
+  }
+  &-register {
+    margin-left: 7px;
+    background-color: $orange;
+  }
+  &-logout {
+    background-color: $orange;
   }
 }
 
